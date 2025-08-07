@@ -1,1 +1,117 @@
+1. Show the output for the following snippet.
+<? php
+$capital=67;
+print(“Variable capital is $capital”);
+print(“Variable CaPiTaL is $CaPiTaL”);
+?>
+Output:
+Parse error: syntax error, unexpected variable "$capital" in /tmp/A4OD5davHK/main.php on line 3
+Corrected version
+<?php
+$capital = 67;
+print("Variable capital is $capital");
+print("Variable CaPiTaL is $CaPiTaL");
+?>
+Output:
+
+Variable capital is 67
+Variable CaPiTaL is 
+
+2. Create a PHP program to display the division table using for-loop.
+1 2 3
+1 1 0.5 0.33
+2 2 1 0.66
+3 3 1.5 1
+CODE:
+<?php
+echo "<table border='1' cellpadding='10'>";
+
+// First row (header)
+echo "<tr><td></td>";
+for ($col = 1; $col <= 3; $col++) {
+    echo "<td>$col</td>";
+}
+echo "</tr>";
+
+// Table body
+for ($row = 1; $row <= 3; $row++) {
+    echo "<tr>";
+    // First column (header)
+    echo "<td>$row</td>";
+    for ($col = 1; $col <= 3; $col++) {
+        // Calculate division and format to 2 decimal places
+        $result = $row / $col;
+        echo "<td>" . round($result, 2) . "</td>";
+    }
+    echo "</tr>";
+}
+
+echo "</table>";
+?>
+
+3.Predict the output of the following snippet:
+$animal = “antelope”; $animal_heads = 1; $animal_legs = 4;
+echo“The $animal has $animal_heads head(s).”;
+echo“The $animal has $animal_legs leg(s).”;
+Output:
+error!
+
+Corrected Code
+$animal = "antelope"; 
+$animal_heads = 1; 
+$animal_legs = 4;
+echo "The $animal has $animal_heads head(s).";
+echo "The $animal has $animal_legs leg(s).";
+output:
+The antelope has 1 head(s).The antelope has 4 leg(s).
+
+
+4.You are building a website where users can calculate the total cost of their purchases.
+Write a PHP program that takes the price and quantity of three items from the user and
+calculates the subtotal, tax (10% of the subtotal),and the total cost (subtotal + tax).
+Display the results to the user.
+Code:
+<?php
+$_POST['price1'] = 10;
+$_POST['qty1'] = 2;
+$_POST['price2'] = 5;
+$_POST['qty2'] = 3;
+$_POST['price3'] = 8;
+$_POST['qty3'] = 1;
+
+
+$subtotal = ($_POST['price1'] * $_POST['qty1']) + ($_POST['price2'] * $_POST['qty2']) + ($_POST['price3'] * $_POST['qty3']);
+
+$tax = $subtotal * 0.10;
+
+
+$total = $subtotal + $tax;
+
+echo "<h3>Results:</h3>";
+echo "Subtotal: $" . number_format($subtotal, 2) . "<br>";
+echo "Tax (10%): $" . number_format($tax, 2) . "<br>";
+echo "<strong>Total Cost: $" . number_format($total, 2) . "</strong>";
+?><?php
+
+$_POST['price1'] = 10;
+$_POST['qty1'] = 2;
+$_POST['price2'] = 5;
+$_POST['qty2'] = 3;
+$_POST['price3'] = 8;
+$_POST['qty3'] = 1;
+
+
+$subtotal = ($_POST['price1'] * $_POST['qty1']) + ($_POST['price2'] * $_POST['qty2']) + ($_POST['price3'] * $_POST['qty3']);
+
+$tax = $subtotal * 0.10;
+
+
+$total = $subtotal + $tax;
+
+echo "<h3>Results:</h3>";
+echo "Subtotal: $" . number_format($subtotal, 2) . "<br>";
+echo "Tax (10%): $" . number_format($tax, 2) . "<br>";
+echo "<strong>Total Cost: $" . number_format($total, 2) . "</strong>";
+?>
+
 
