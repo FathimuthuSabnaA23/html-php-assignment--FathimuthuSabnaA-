@@ -49,7 +49,7 @@ for ($row = 1; $row <= 3; $row++) {
 echo "</table>";
 ?>
 
-3.Predict the output of the following snippet:
+4.Predict the output of the following snippet:
 $animal = “antelope”; $animal_heads = 1; $animal_legs = 4;
 echo“The $animal has $animal_heads head(s).”;
 echo“The $animal has $animal_legs leg(s).”;
@@ -66,7 +66,7 @@ output:
 The antelope has 1 head(s).The antelope has 4 leg(s).
 
 
-4.You are building a website where users can calculate the total cost of their purchases.
+5.You are building a website where users can calculate the total cost of their purchases.
 Write a PHP program that takes the price and quantity of three items from the user and
 calculates the subtotal, tax (10% of the subtotal),and the total cost (subtotal + tax).
 Display the results to the user.
@@ -79,36 +79,81 @@ $_POST['price2'] = 5;
 $_POST['qty2'] = 3;
 $_POST['price3'] = 8;
 $_POST['qty3'] = 1;
-
-
 $subtotal = ($_POST['price1'] * $_POST['qty1']) + ($_POST['price2'] * $_POST['qty2']) + ($_POST['price3'] * $_POST['qty3']);
-
 $tax = $subtotal * 0.10;
-
-
 $total = $subtotal + $tax;
-
 echo "<h3>Results:</h3>";
 echo "Subtotal: $" . number_format($subtotal, 2) . "<br>";
 echo "Tax (10%): $" . number_format($tax, 2) . "<br>";
 echo "<strong>Total Cost: $" . number_format($total, 2) . "</strong>";
 ?><?php
-
 $_POST['price1'] = 10;
 $_POST['qty1'] = 2;
 $_POST['price2'] = 5;
 $_POST['qty2'] = 3;
 $_POST['price3'] = 8;
 $_POST['qty3'] = 1;
-
 $subtotal = ($_POST['price1'] * $_POST['qty1']) + ($_POST['price2'] * $_POST['qty2']) + ($_POST['price3'] * $_POST['qty3']);
 $tax = $subtotal * 0.10;
 $total = $subtotal + $tax;
-
 echo "<h3>Results:</h3>";
 echo "Subtotal: $" . number_format($subtotal, 2) . "<br>";
 echo "Tax (10%): $" . number_format($tax, 2) . "<br>";
 echo "<strong>Total Cost: $" . number_format($total, 2) . "</strong>";
 ?>
+
+6. Interpret the method to pass the information between pages in PHP with an example.
+i. Using GET Method (URL Parameters)
+Page 1: form.html
+<form action="page2.php" method="get">
+  Name: <input type="text" name="username">
+  <input type="submit" value="Submit">
+</form>
+Page 2: page2.php
+<?php
+$name = $_GET['username'];
+echo "Hello, $name!";
+?>
+URL looks like:
+page2.php?username=John
+
+ ii. Using POST Method
+Page 1: form.html
+<form action="page2.php" method="post">
+  Name: <input type="text" name="username">
+  <input type="submit" value="Submit">
+</form>
+Page 2: page2.php
+<?php
+$name = $_POST['username'];
+echo "Welcome, $name!";
+?>
+
+iii. Using Sessions
+Page 1: page1.php
+<?php
+session_start();
+$_SESSION['username'] = 'Alice';
+?>
+<a href="page2.php">Go to Page 2</a>
+Page 2: page2.php
+<?php
+session_start();
+echo "Hello, " . $_SESSION['username'];
+?>
+
+ iv. Using Cookies
+Page 1: page1.php
+<?php
+setcookie("username", "Bob", time() + 3600); // 1 hour expiry
+?>
+<a href="page2.php">Go to Page 2</a>
+Page 2: page2.php
+<?php
+if(isset($_COOKIE['username'])) {
+    echo "Welcome back, " . $_COOKIE['username'];
+}
+?>
+
 
 
