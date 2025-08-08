@@ -70,6 +70,7 @@ The antelope has 1 head(s).The antelope has 4 leg(s).
 Write a PHP program that takes the price and quantity of three items from the user and
 calculates the subtotal, tax (10% of the subtotal),and the total cost (subtotal + tax).
 Display the results to the user.
+
 Code:
 <?php
 $_POST['price1'] = 10;
@@ -100,12 +101,8 @@ $_POST['qty2'] = 3;
 $_POST['price3'] = 8;
 $_POST['qty3'] = 1;
 
-
 $subtotal = ($_POST['price1'] * $_POST['qty1']) + ($_POST['price2'] * $_POST['qty2']) + ($_POST['price3'] * $_POST['qty3']);
-
 $tax = $subtotal * 0.10;
-
-
 $total = $subtotal + $tax;
 
 echo "<h3>Results:</h3>";
