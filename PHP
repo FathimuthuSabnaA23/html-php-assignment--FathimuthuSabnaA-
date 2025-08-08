@@ -156,4 +156,751 @@ if(isset($_COOKIE['username'])) {
 ?>
 
 
+7. Create a form which takes the name of the user as input and prints a greeting in the format
+given below and if the user submits the form with the name field blank, it prints an
+appropriate error message.
+
+<html>
+<head>
+    <title>Greeting Form</title>
+</head>
+<body>
+
+<h2>User Greeting Form</h2>
+
+<form method="post" action="">
+    Enter your name: <input type="text" name="username">
+    <input type="submit" value="Submit">
+</form>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = trim($_POST["username"]);
+
+    if ($name == "") {
+        echo "<p style='color:red;'>Error: Name field cannot be blank.</p>";
+    } else {
+        echo "<h3>Hello, Welcome to Everyone!</h3>";
+        echo "<p>Have a nice day!!</p>";
+    }
+}
+?>
+
+</body>
+</html>
+Output :
+ If Name is Entered:
+
+Hello, Welcome to Everyone!
+Have a nice day!!
+If Name is Blank:
+
+Error: Name field cannot be blank.
+
+8. A customer visits a shop to buy a soft drink; he has two options:
+Drink A cost is Rs.25 and the size of the bottle is 11.
+Drink B cost is Rs.23 and its size of the bottle is 9.
+Which drink should he choose to save money? Solve this problem using function deal ( ).
+Code:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Best Drink Deal</title>
+</head>
+<body>
+<h2>Which Drink Saves More Money?</h2>
+<?php
+function deal() {
+    $costA = 25;
+    $sizeA = 11;
+    $unitPriceA = $costA / $sizeA;
+    $costB = 23;
+    $sizeB = 9;
+    $unitPriceB = $costB / $sizeB;
+
+    echo "Cost per unit for Drink A: ₹" . round($unitPriceA, 2) . "<br>";
+    echo "Cost per unit for Drink B: ₹" . round($unitPriceB, 2) . "<br><br>";
+
+    if ($unitPriceA < $unitPriceB) {
+        echo "<strong>Drink A is the better deal. You save more money.</strong>";
+    } elseif ($unitPriceB < $unitPriceA) {
+        echo "<strong>Drink B is the better deal. You save more money.</strong>";
+    } else {
+        echo "<strong>Both drinks offer the same value.</strong>";
+    }
+}
+
+deal();
+?>
+
+</body>
+</html>
+Output:
+Cost per unit for Drink A: ₹2.27  
+Cost per unit for Drink B: ₹2.56  
+
+Drink A is the better deal. You save more money.
+
+9. Predict the output of the following snippet:
+$this = “this”; $that = “that”; $the_other = 2.2000000000;
+print(“$this,$not_set,$that+$the_other”);
+
+output:
+Fatal error: Cannot re-assign $this
+
+corrected version:
+$myvar = "this";
+$that = "that";
+$the_other = 2.2;
+print("$myvar,$not_set,$that+$the_other");
+output:
+this,,that+2.2
+
+
+10. Develop a program to check student grades based on marks using a loop.
+code:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grades</title>
+</head>
+<body>
+<h2>Student Grades Based on Marks</h2>
+<?php
+$student_marks = array(95, 82, 76, 63, 58, 45, 88, 69);
+function getGrade($mark) {
+    if ($mark >= 90) return "A+";
+    elseif ($mark >= 80) return "A";
+    elseif ($mark >= 70) return "B";
+    elseif ($mark >= 60) return "C";
+    elseif ($mark >= 50) return "D";
+    else return "F";
+}
+for ($i = 0; $i < count($student_marks); $i++) {
+    $grade = getGrade($student_marks[$i]);
+    echo "Student " . ($i + 1) . " - Marks: " . $student_marks[$i] . " - Grade: " . $grade . "<br>";
+}
+?>
+</body>
+</html>
+Output:
+Student 1 - Marks: 95 - Grade: A+
+Student 2 - Marks: 82 - Grade: A
+Student 3 - Marks: 76 - Grade: B
+Student 4 - Marks: 63 - Grade: C
+Student 5 - Marks: 58 - Grade: D
+Student 6 - Marks: 45 - Grade: F
+Student 7 - Marks: 88 - Grade: A
+Student 8 - Marks: 69 - Grade: C
+
+11. Develop a PHP program to show days of the week using switch cases.
+code:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Days of the Week</title>
+</head>
+<body>
+<h2>Select a Day (1 to 7)</h2>
+<form method="post">
+    Enter a number (1-7): <input type="number" name="day" min="1" max="7" required>
+    <input type="submit" value="Show Day">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $day = $_POST["day"];
+    echo "<h3>Result:</h3>";
+    switch ($day) {
+        case 1:
+            echo "Monday";
+            break;
+        case 2:
+            echo "Tuesday";
+            break;
+        case 3:
+            echo "Wednesday";
+            break;
+        case 4:
+            echo "Thursday";
+            break;
+        case 5:
+            echo "Friday";
+            break;
+        case 6:
+            echo "Saturday";
+            break;
+        case 7:
+            echo "Sunday";
+            break;
+        default:
+            echo "Invalid input. Please enter a number between 1 and 7.";
+    }
+}
+?>
+</body>
+</html>
+Output:
+Select a Day (1 to 7)
+Enter a number (1-7):3
+wednesday
+
+12. Write a program to check student grade based on marks:
+Conditions:
+If marks are 75% or more, the grade will be First Class.
+If marks between 60% to 74%, grade will be second class.
+If marks between 40% to 59%, grade will be third class.
+If marks are less than 40%, students will be Fail.
+
+coe:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Checker</title>
+</head>
+<body>
+<h2>Enter Student Marks</h2>
+<form method="post">
+    Marks (%): <input type="number" name="marks" min="0" max="100" required>
+    <input type="submit" value="Check Grade">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $marks = $_POST["marks"];
+    echo "<h3>Result:</h3>";
+
+    if ($marks >= 75) {
+        echo "Grade: First Class";
+    } elseif ($marks >= 60 && $marks <= 74) {
+        echo "Grade: Second Class";
+    } elseif ($marks >= 40 && $marks <= 59) {
+        echo "Grade: Third Class";
+    } else {
+        echo "Grade: Fail";
+    }
+}
+?>
+</body>
+</html>
+output:
+Enter Student Marks
+Marks (%): 
+85
+Grade: First Class
+
+13. Consider the following snippet, comment your views.
+$sub = substr(12345, 2, 2);
+echo “sub is $sub”;
+
+ 1. substr(12345, 2, 2)
+substr() is a function that works on strings, not numbers.
+The number 12345 will be implicitly converted to a string: "12345".
+Then substr("12345", 2, 2) means:
+Start at index 2 (0-based indexing → third character)
+Take 2 characters
+"12345"
+ Index: 0 → 1, 1 → 2, 2 → 3, 3 → 4, 4 → 5
+Result: "34"
+2. Invalid Quotation Marks
+echo “sub is $sub”;
+
+14. Show a form with input fields for a user's name, email, and message. When the form is
+submitted, display a confirmation message on the same page with the user's name and
+email.
+code:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+<h2>Contact Us</h2>
+<form method="post" action="">
+    Name: <input type="text" name="name" required><br><br>
+    Email: <input type="email" name="email" required><br><br>
+    Message:<br>
+    <textarea name="message" rows="5" cols="30" required></textarea><br><br>
+    <input type="submit" name="submit" value="Send">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name  = htmlspecialchars($_POST["name"]);
+    $email = htmlspecialchars($_POST["email"]);
+
+    echo "<h3>Thank you, $name!</h3>";
+    echo "<p>We have received your message and will contact you at <strong>$email</strong>.</p>";
+}
+?>
+</body>
+</html>
+output:
+Contact Us
+Name: 
+sabna
+Email: 
+23bcs018@psgrkcw.ac.in
+Message:
+hi
+
+15. Create a PHP program to compute the sum of the digits of a number.
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sum of Digits</title>
+</head>
+<body>
+<h2>Calculate Sum of Digits</h2>
+<form method="post">
+    Enter a number: <input type="number" name="number" required>
+    <input type="submit" value="Calculate">
+</form>
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $number = $_POST['number'];
+    $sum = 0;
+    $temp = abs($number); // Handle negative numbers
+
+    while ($temp > 0) {
+        $digit = $temp % 10;
+        $sum += $digit;
+        $temp = (int)($temp / 10);
+    }
+    echo "<h3>Sum of digits of $number is: $sum</h3>";
+}
+?>
+
+</body>
+</html>
+
+Output:
+Number: 1234
+Sum of digits of 1234 is: 10
+
+16. Write a PHP function that takes two numbers as input and returns the sum of those
+numbers. Display the result on the webpage, when a button is clicked.
+code:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Two Numbers</title>
+</head>
+<body>
+<h2>Add Two Numbers</h2>
+<form method="post">
+    Number 1: <input type="number" name="num1" required><br><br>
+    Number 2: <input type="number" name="num2" required><br><br>
+    <input type="submit" name="add" value="Add Numbers">
+</form>
+<?php
+function addNumbers($a, $b) {
+    return $a + $b;
+}
+if (isset($_POST['add'])) {
+    $num1 = $_POST['num1'];
+    $num2 = $_POST['num2'];
+    
+    $result = addNumbers($num1, $num2);
+    echo "<h3>Result: $num1 + $num2 = $result</h3>";
+}
+?>
+</body>
+</html>
+output:
+Number 1: 10
+Number 2: 20
+Result: 10 + 20 = 30
+
+17. Examine the various control structures in php and construct a bank transaction problem
+with customers deposit and withdrawal of amount.
+code:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Transaction</title>
+</head>
+<body>
+<h2>Simple Bank Transaction</h2>
+<form method="post">
+    Enter Amount: <input type="number" name="amount" required><br><br>
+    Transaction Type:
+    <select name="transaction">
+        <option value="deposit">Deposit</option>
+        <option value="withdraw">Withdraw</option>
+    </select><br><br>
+    <input type="submit" name="submit" value="Process">
+</form>
+<?php
+$balance = 1000;
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $amount = $_POST['amount'];
+    $transaction = $_POST['transaction'];
+    if ($amount <= 0) {
+        echo "<p style='color:red;'>Enter a valid amount greater than 0.</p>";
+    } else {
+        if ($transaction == "deposit") {
+            $balance += $amount;
+            echo "<p style='color:green;'>Deposited Rs. $amount successfully.</p>";
+        } elseif ($transaction == "withdraw") {
+            if ($amount > $balance) {
+                echo "<p style='color:red;'>Insufficient balance! Withdrawal failed.</p>";
+            } else {
+                $balance -= $amount;
+                echo "<p style='color:green;'>Withdrawn Rs. $amount successfully.</p>";
+            }
+        } else {
+            echo "<p style='color:red;'>Invalid transaction type selected.</p>";
+        }
+
+        echo "<h3>Updated Balance: Rs. $balance</h3>";
+    }
+}
+?>
+</body>
+</html>
+output:
+Withdrawn Rs. 300 successfully.
+Updated Balance: Rs. 700
+
+18. IsSet() function in PHP with example.
+<?php
+$name = "John";
+
+if (isset($name)) {
+    echo "The variable 'name' is set.<br>";
+}
+
+$age = null;
+
+if (isset($age)) {
+    echo "The variable 'age' is set.";
+} else {
+    echo "The variable 'age' is not set or is NULL.";
+}
+?>
+output:
+The variable 'name' is set.
+The variable 'age' is not set or is NULL.
+
+19. Examine a PHP function that accepts an array of numbers and returns the highest and
+lowest values in that array. Display the results on the webpage.
+code:
+<?php
+function findMinMax($arr) {
+    return ["min" => min($arr), "max" => max($arr)];
+}
+
+$numbers = [10, 25, 5, 78, 32];
+$result = findMinMax($numbers);
+
+echo "Lowest: " . $result['min'] . "<br>";
+echo "Highest: " . $result['max'];
+?>
+output:
+Lowest: 5  
+Highest: 78
+
+20. Implement a contact form with validation to ensure all fields are filled out before
+submission.
+code:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Form</title>
+</head>
+<body>
+<h2>Contact Us</h2>
+<form method="post">
+    Name: <input type="text" name="name"><br><br>
+    Email: <input type="email" name="email"><br><br>
+    Message: <textarea name="message"></textarea><br><br>
+    <input type="submit" name="submit" value="Send">
+</form>
+<?php
+if (isset($_POST['submit'])) {
+    $name    = trim($_POST['name']);
+    $email   = trim($_POST['email']);
+    $message = trim($_POST['message']);
+
+    if ($name == "" || $email == "" || $message == "") {
+        echo "<p style='color:red;'>Please fill in all fields.</p>";
+    } else {
+        echo "<h3>Thank you, $name. We received your message.</h3>";
+        echo "<p>Email: $email</p>";
+    }
+}
+?>
+</body>
+</html>
+ output:
+Name:    John
+Email:   john@example.com
+Message: Hello, this is a test.
+🖨 Output:
+
+Thank you, John. We received your message.
+Email: john@example.com
+
+21. Construct a PHP function that checks if a given year is a leap year and returns true or
+false accordingly.
+code:
+<?php
+function isLeapYear($year) {
+    // Leap year if divisible by 4 and (not divisible by 100 or divisible by 400)
+    if (($year % 4 == 0 && $year % 100 != 0) || ($year % 400 == 0)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+$year = 2024;
+if (isLeapYear($year)) {
+    echo "$year is a leap year.";
+} else {
+    echo "$year is not a leap year.";
+}
+?>
+output:
+2024 is a leap year.
+
+22. Create a PHP script that counts the number of occurrences of a specific word in a given
+string.
+code:
+<?php
+function countWordOccurrences($text, $word) {
+    // Convert both to lowercase for case-insensitive match
+    $text = strtolower($text);
+    $word = strtolower($word);
+
+    // Count occurrences
+    $count = substr_count($text, $word);
+    return $count;
+}
+
+// Example usage
+$inputText = "PHP is great. I love PHP because PHP is powerful.";
+$searchWord = "php";
+
+$result = countWordOccurrences($inputText, $searchWord);
+echo "The word '$searchWord' appears $result times.";
+?>
+output:
+The word 'php' appears 3 times.
+
+23. Prioritize the use of GET and POST arguments in PHP with a real time example.
+Real-Time Example
+1. GET Example: Search Page
+<?php
+if (isset($_GET['query'])) {
+    $q = $_GET['query'];
+    echo "You searched for: $q";
+}
+?>
+
+<form method="get" action="">
+    Search: <input type="text" name="query">
+    <input type="submit" value="Search">
+</form>
+
+2. POST Example: Login Form
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];  // never shown in URL
+
+    echo "Welcome, $username!";
+}
+?>
+
+<form method="post" action="">
+    Username: <input type="text" name="username"><br>
+    Password: <input type="password" name="password"><br>
+    <input type="submit" value="Login">
+</form>
+
+24. Write a PHP script to manipulate the strings with all the string functions.
+<?php
+$str = "  Hello World! Welcome to PHP String Functions.  ";
+echo "<h3>Original String:</h3>";
+echo "'$str'<br><br>";
+$trimmed = trim($str);
+echo "<b>1. trim():</b> '$trimmed'<br>";
+echo "<b>2. strtolower():</b> " . strtolower($trimmed) . "<br>";
+echo "<b>3. strtoupper():</b> " . strtoupper($trimmed) . "<br>";
+echo "<b>4. strlen():</b> " . strlen($trimmed) . "<br>";
+echo "<b>5. str_word_count():</b> " . str_word_count($trimmed) . "<br>";
+echo "<b>6. strrev():</b> " . strrev($trimmed) . "<br>";
+echo "<b>7. strpos():</b> Position of 'PHP' is " . strpos($trimmed, "PHP") . "<br>";
+echo "<b>8. str_replace():</b> " . str_replace("World", "Everyone", $trimmed) . "<br>";
+echo "<b>9. substr():</b> " . substr($trimmed, 6, 5) . "<br>";
+echo "<b>10. str_repeat():</b> " . str_repeat("PHP! ", 3) . "<br>";
+$str1 = "apple";
+$str2 = "banana";
+echo "<b>11. strcmp():</b> Comparing 'apple' and 'banana' = " . strcmp($str1, $str2) . "<br>";
+$words = explode(" ", $trimmed);
+echo "<b>12. explode():</b> ";
+print_r($words);
+echo "<br>";
+echo "<b>13. implode():</b> " . implode(" | ", $words) . "<br>";
+?>
+
+Output:
+Original String: '  Hello World! Welcome to PHP String Functions.  '
+
+1. trim(): 'Hello World! Welcome to PHP String Functions.'
+2. strtolower(): hello world! welcome to php string functions.
+3. strtoupper(): HELLO WORLD! WELCOME TO PHP STRING FUNCTIONS.
+4. strlen(): 47
+5. str_word_count(): 7
+6. strrev(): .snoitcnuF gnirtS PHP ot emocleW !dlroW olleH
+7. strpos(): Position of 'PHP' is 25
+8. str_replace(): Hello Everyone! Welcome to PHP String Functions.
+9. substr(): World
+10. str_repeat(): PHP! PHP! PHP!
+11. strcmp(): Comparing 'apple' and 'banana' = -1
+12. explode(): Array ( [0] => Hello [1] => World! [2] => Welcome [3] => to [4] => PHP [5] => String [6] => Functions. )
+13. implode(): Hello | World! | Welcome | to | PHP | String | Functions.
+
+25. Construct a PHP script to replace the first ‘the’ of the following string with ‘best’. Data:
+“The Thing will come to you soon”
+code:
+<?php
+$data = "The Thing will come to you soon";
+$updated = preg_replace('/\bThe\b/', 'best', $data, 1);
+
+echo "Original: $data<br>";
+echo "Updated: $updated";
+?>
+output:
+Original: The Thing will come to you soon  
+Updated: best Thing will come to you soon
+
+26. Construct a php program to create a chess board in PHP using the “For” loop.
+code:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PHP Chess Board</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            margin: 20px;
+        }
+        td {
+            width: 50px;
+            height: 50px;
+        }
+        .white {
+            background-color: #fff;
+        }
+        .black {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+<h2>Chess Board</h2>
+<table border="1">
+    <?php
+    for ($row = 1; $row <= 8; $row++) {
+        echo "<tr>";
+        for ($col = 1; $col <= 8; $col++) {
+            // Alternate between white and black
+            $total = $row + $col;
+            if ($total % 2 == 0) {
+                echo "<td class='white'></td>";
+            } else {
+                echo "<td class='black'></td>";
+            }
+        }
+        echo "</tr>";
+    }
+    ?>
+</table>
+</body>
+</html>
+
+27. Articulate the mathematical operators with suitable examples in PHP.
+1. Addition (+)
+<?php
+$a = 10;
+$b = 5;
+echo $a + $b;
+?>
+output:
+15
+2. Subtraction (-)
+<?php
+$a = 10;
+$b = 5;
+echo $a - $b; 
+?>
+output:
+5
+ 3. Multiplication (*)
+<?php
+$a = 10;
+$b = 5;
+echo $a * $b; 
+?>
+output:
+50
+ 4. Division (/)
+<?php
+$a = 10;
+$b = 5;
+echo $a / $b;
+?>
+output:
+2
+
+28. Consider three variables $a, $b, $c, apply var_dump() function to evaluate if the values
+are equal or not.
+code:
+<?php
+$a = 10;
+$b = "10";
+$c = 15;
+
+echo "Comparing \$a and \$b (loose equality using ==): ";
+var_dump($a == $b); 
+
+echo "<br>Comparing \$a and \$b (strict equality using ===): ";
+var_dump($a === $b);
+echo "<br>Comparing \$a and \$c (loose equality): ";
+var_dump($a == $c); 
+
+echo "<br>Comparing \$b and \$c (strict equality): ";
+var_dump($b === $c); 
+?>
+
+output:
+Comparing $a and $b (loose equality using ==): bool(true)
+Comparing $a and $b (strict equality using ===): bool(false)
+Comparing $a and $c (loose equality): bool(false)
+Comparing $b and $c (strict equality): bool(false)
+
+30. Develop a PHP script that generates a random password consisting of a combination of
+letters, numbers, and special characters.
+code:
+<?php
+function generatePassword($length = 12) {
+    $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()-_+=<>?';
+    $shuffled = str_shuffle($chars);
+    $password = substr($shuffled, 0, $length);
+    
+    return $password;
+}
+echo "Generated Password: " . generatePassword(12);
+?>
+output:
+Generated Password: v6MBz^GO?qn%
+
+
+
+
+
+
+
+
+
+
 
