@@ -1,0 +1,460 @@
+
+3. Imagine you are building a personal portfolio website. Design a web page layout that
+includes a header, a navigation menu, a main content area for displaying your projects
+and a footer. Explain how you would structure the HTML code and apply CSS styles to
+achieve the desired layout and visual design.
+
+About.html
+<html lang="en">
+<body style="
+  background-image: url('https://img.freepik.com/free-photo/apple-energy-bar-near-sports-stuff_23-2147750783.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;">
+    <h1 style="text-align: center; color: #c0392b;">About Us</h1>
+    <p>Hi! I'm Sabna, a certified personal trainer with 5+ years of experience in helping people achieve their fitness
+        goals. Whether you're looking to lose weight, build muscle, or get more active, I'm here to guide you every step
+        of the way.</p>
+    <p>In 1993, the first Fitness First club opened in Coimbatore in the Tamil Nadu. Over the next decade and a
+        half, Fitness first was present in over 16 countries, including India making it a leader in the global fitness
+        industry. In 2018, Fitness First India was acquired by cure.fit, India's largest chain of fitness centres that
+        offers energetic group workouts and multiple workout formats to choose from.</p>
+
+    <h2  style="text-align: center; color: #c0392b;">HOW CAN WE HELP?</h2>
+
+    <p>We want to help our members go further, so if you have any suggestions about our clubs, classes, personal
+        training sessions or anything else, please come in and talk to one of our team member or if you prefer, drop us
+        a note via our online enquiry forms.</p>
+
+    <p class="btn-default inverse"><a href="Contact_us.html" target="_self" title="Contact Us">Contact Us</a></p>
+    <div class="col copy-col">
+        <h2  style="text-align: center; color: #c0392b;">Work with us</h2>
+
+        <p>We are an ambitious company and we’re always looking for great people to join our team – from personal
+            trainers, group exercise instructors and club managers to our front-of-house teams. We’re committed to
+            training, so you’ll be encouraged to improve your existing skills while you develop new ones.</p>
+
+        <p>Find out more about becoming part of the Fitness First team.&nbsp;</p>
+
+        <p class="btn-default inverse"><a href="About_us.html" target="_self" title="Find out more">Find out more</a>
+        </p>
+    </div>
+<video width="600" controls>
+  <source src="C:\Users\DELL\Documents\finessortfolio2\75644-556482803_large.mp4">
+  Your browser does not support the video tag.
+</video>
+
+</body>
+
+contact.html
+  <html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* body {
+      font-family: Arial, Helvetica, sans-serif;
+    } */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    input[type=text],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      resize: vertical;
+    }
+
+    input[type=submit] {
+      background-color: #04AA6D;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body style="
+  background-image: url('https://img.freepik.com/free-photo/apple-energy-bar-near-sports-stuff_23-2147750783.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;">
+   <header>
+      
+    </header>
+  <h1 style="text-align: center;  color: #c0392b;"">Contact Us</h1>
+  <div class="container">
+    <form action="#">
+      <label for="fname">First Name</label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+      <label for="lname">Last Name</label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+      <label for="country">Country</label>
+      <select id="country" name="State">
+        <option value="Tamil Nadu">Tamil Nadu</option>
+        <option value="Kerala">Kerala</option>
+        <option value="Karnataka">Karnataka</option>
+      </select>
+
+      <label for="subject">Subject</label>
+      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+ 
+</body>
+
+</html>
+
+footer.html
+  <!DOCTYPE html>
+<html>
+<head>
+  <title>Main</title>
+</head>
+<body >
+
+     <footer style=" text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: white;">
+        <p>&copy; 2025 Fit with Sabna. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+index.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Fitness Trainer Portfolio (Frameset)</title>
+</head>
+
+<frameset rows="20%, 65%, 15%">
+  
+  <!-- Top: logo and nav -->
+  <frame name="top" src="C:\Users\DELL\Documents\finessortfolio2\top.html">
+
+  <!-- Middle: left and right -->
+  <frameset cols="30%, 70%">
+    <frame name="C1" src="C:\Users\DELL\Documents\finessortfolio2\left.html">
+    <frame name="C2" src="C:\Users\DELL\Documents\finessortfolio2\right.html">
+  </frameset>
+
+  <!-- Bottom: footer -->
+  <frame name="footer" src="C:\Users\DELL\Documents\finessortfolio2\footer.html">
+
+</frameset>
+
+<noframes>
+  <body>
+    Your browser does not support frames.
+  </body>
+</noframes>
+
+</html>
+
+left.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Left</title>
+</head>
+<body  style="
+  background-image: url('https://0701.static.prezi.com/preview/v2/3mkohrho2rrvw3iizwcu74niyd6jc3sachvcdoaizecfr3dnitcq_3_0.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  font-family: Arial, sans-serif;
+  padding: 1rem;">
+  <hr>
+  <nav>
+<ul>
+    <li><a href="C:\Users\DELL\Documents\finessortfolio2\right.html"target="C2">Home</a> </li>
+    <li><a href="C:\Users\DELL\Documents\finessortfolio2\About_us.html" target="C2">About Us</a> </li>
+    <li><a href="C:\Users\DELL\Documents\finessortfolio2\Services.html" target="C2">Services</a> </li>
+    <li><a href="C:\Users\DELL\Documents\finessortfolio2\Transformations.html"target="C2">Transformations</a> </li>
+    <li><a href="C:\Users\DELL\Documents\finessortfolio2\Contact_us.html" target="C2">Train with Us</a></li>
+</ul>
+  </nav>
+</body>
+</html>
+
+right.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Main</title>
+</head>
+<body style="
+  background-image: url('https://img.freepik.com/free-photo/apple-energy-bar-near-sports-stuff_23-2147750783.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;">
+  
+  <h2>Transform Your Body, Transform Your Life</h2>
+  <p>Personal Training | Nutrition | Motivation</p>
+  <a href="contact.html" style="
+    padding: 10px 20px;
+    background: crimson;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;">Book a Session</a>
+<audio controls autoplay loop>
+  <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_bf30cd5cc9.mp3" type="audio/mp3">
+  Your browser does not support the audio element.
+</audio>
+
+</body>
+</html>
+
+
+service.html
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fit with sabna | Fitness Trainer</title>
+</head>
+<body style="
+  background-image: url('https://img.freepik.com/free-photo/apple-energy-bar-near-sports-stuff_23-2147750783.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;">
+     <header>
+         <h1  style="text-align: center; color: #c0392b;">Services</h1>
+    </header>
+      <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>🏋️‍♂️ One-on-One Personal Training</li>
+        <li>🍎 Nutrition Coaching</li>
+        <li>📅 Online Workout Plans</li>
+        <li>🧘‍♀️ Group Fitness Classes</li>
+      </ul>
+      <div class="section-inner">
+        <h2  style="text-align: center; color: #c0392b;">World Class Facilities</h2>
+
+        <p>Across the world, because members enjoy Fitness First like their second home, we strive to keep consistency
+          in the look and feel of all our clubs by maintaining the world-class facilities we offer and the high standard
+          of service.</p>
+
+        <h4 style="text-align: center; color: #c0392b;">Gym</h4>
+
+        <p>Fitness First specialises in safe cardiovascular exercise programmes to enable you to improve your lifestyle,
+          health and general wellbeing. Exercise is great for weight loss, shaping and toning and is in fact the only
+          way to lose weight<br>
+          in the right places and keep it off! Our spacious, air-conditioned gymnasiums are fully equipped With a
+          comprehensive range of cardio equipments such as treadmills, steppers and elipticals per club, and over 3 tons
+          of free weight equipment as well as the stretch area, we can provide you with all the encouragement you need
+          to achieve your goals.</p>
+
+        <h4  style="text-align: center; color: #c0392b;">Studio</h4>
+
+        <p>Group exercise is a very important part of a cardiovascular workout - in fact, it is an excellent exercise
+          programmed not just for women but for men as well! Our studio programs offer an exciting range of classes
+          including world renowned Les Mills programs such as BODYCOMBAT™, BODYPUMP™, BODYBALANCE™, BODYVIVE™, RPM™ and
+          Yoga, Tai Chi and everything in-between. The studio is built on a fully sprung floor for your safety and the
+          programs have been designed specifically to cater for the needs of all ages and abilities as well as at times
+          that will suit you.</p>
+
+        <h4  style="text-align: center; color: #c0392b;">1:1 Personal Training Counter</h4>
+
+        <p>Personal Training is not just for movie stars! Now you can get affordable personal training to help you
+          achieve your fitness goals. Maximize results with minimum time! For more information on how we can help you
+          achieve your goals, please speak to our Fitness Manager or any of our Personal Trainers.</p>
+
+        <h4 style="text-align: center; color: #c0392b;">Cardio Theater</h4>
+
+        <p>Exercise is more fun with personalised audio visual entertainment. Whether you enjoy watching music videos,
+          news or the latest sporting event, the cardio theatre will make that 5 mile run just fly by!&nbsp;Exercise
+          need no longer be boring with cardio theatre, giving you a choice of 5 to 6 Astro channels to keep you
+          entertained whilst you are exercising.</p>
+
+        <h4 style="text-align: center; color: #c0392b;">Cycling Studio</h4>
+
+        <p>Taking our clubs by storm, we now have dedicated Cycling studios in many of our clubs. Spinning is a fun and
+          exciting-bike based aerobic workout ideal for all fitness levels. You can burn 500 – 600 calories in a class!
+        </p>
+
+        <h4  style="text-align: center; color: #c0392b;">Member's Lounge</h4>
+
+        <p>The perfect place to unwind after your workout. Relax, read the papers, chat with other members and friends
+          as well as enjoy complimentary soft drinks, tea and coffee&nbsp;in the members’ lounge.</p>
+
+        <h4>Luxurious Changing Room</h4>
+
+        <p>With relaxation being an important part of a complete exercise programme, treat yourself to the luxurious
+          changing room with shower facilities and complimentary toiletry, hair dryers, rest rooms &amp; personalised
+          lockers.</p>
+
+        <h4 style="text-align: center; color: #c0392b;">Security</h4>
+
+        <p>For the convenience and safety of our members, all entries to the clubs are based on computerised automated
+          gates where only members can access the clubs by swiping their membership cards at the gates.</p>
+<h2>Weekly Workout Plan</h2>
+
+<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: center; border-collapse: collapse;">
+  <thead style="background-color: #c0392b; color: #c0392b;">
+    <tr>
+      <th>Day</th>
+      <th>Workout</th>
+      <th>Duration</th>
+      <th>Focus Area</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Monday</td>
+      <td>Cardio + Abs</td>
+      <td>45 mins</td>
+      <td>Fat Burn</td>
+    </tr>
+    <tr>
+      <td>Tuesday</td>
+      <td>Upper Body Strength</td>
+      <td>60 mins</td>
+      <td>Chest, Back, Arms</td>
+    </tr>
+    <tr>
+      <td>Wednesday</td>
+      <td>Yoga + Stretching</td>
+      <td>40 mins</td>
+      <td>Flexibility</td>
+    </tr>
+    <tr>
+      <td>Thursday</td>
+      <td>Lower Body Strength</td>
+      <td>60 mins</td>
+      <td>Legs, Glutes</td>
+    </tr>
+    <tr>
+      <td>Friday</td>
+      <td>HIIT</td>
+      <td>30 mins</td>
+      <td>Endurance</td>
+    </tr>
+    <tr>
+      <td>Saturday</td>
+      <td>Full Body Circuit</td>
+      <td>50 mins</td>
+      <td>Overall Toning</td>
+    </tr>
+    <tr>
+      <td>Sunday</td>
+      <td>Rest / Active Recovery</td>
+      <td>-</td>
+      <td>Recovery</td>
+    </tr>
+  </tbody>
+</table>
+
+
+      </div>
+
+     </section>
+
+</body>
+</html>
+
+top.html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Top</title>
+</head>
+<body style="background-color: #f8f8f8; text-align: center;">
+  <div style="display: flex; align-items: center; justify-content: center;">
+    <img src="fitnesslogo.jpg" alt="Logo" height="80">
+    <h1 style="margin-left: 20px;">Fit with Sabna</h1>
+  </div>
+  <hr>
+  
+</body>
+</html>
+
+
+transformation.html
+<!DOCTYPE html>
+<html lang="en">
+
+<body style="
+  background-image: url('https://img.freepik.com/free-photo/apple-energy-bar-near-sports-stuff_23-2147750783.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: #fff;
+  padding: 100px 20px;">
+   <header>
+        <h1 style="text-align: center; color: #c0392b;">Client Transformations</h1>
+    </header>
+<body style="font-family: Arial, sans-serif; padding: 2rem; background-color: #f4f4f4;">
+
+  <p style="text-align: center;">Real results from real dedication. See the inspiring fitness journeys of our amazing clients.</p>
+  <hr><br>
+
+  <!-- Client 1 -->
+  <div style="display: flex; gap: 20px; margin-bottom: 40px;">
+    <section id="transformations">
+      
+      <p>Real results from real clients.</p>
+      <div class="C:\Users\DELL\OneDrive\Documents\fitness-portfolio\fitnessbanner.jpg">
+<div style="display: flex; gap: 20px; margin-bottom: 40px;">
+    
+    <div>
+      <h4>Rahul – 12 Weeks Transformation</h4>
+      <p>"Sabna's workouts and personalized diet plans helped me shred fat and gain muscle. I feel like a new person!"<br>
+         "When I started training with Sabna, I weighed over 90 kg and struggled with energy, confidence, and consistency. I had tried many fitness plans before, but nothing ever stuck. Sabna’s approach was different—structured workouts, a sustainable diet plan, and constant motivation. Over 12 weeks, I lost 12 kg of fat, gained lean muscle, and completely changed my lifestyle. Now, I wake up feeling energized, proud of my progress, and more focused in every area of my life. This transformation has been more than just physical—it’s been mental and emotional too. I’m forever thankful."</p>
+    </div>
+  </div>
+        <img src="C:\Users\DELL\OneDrive\Documents\fitness-portfolio\before after1.jpg" alt="Client Transformation 1">
+<div style="display: flex; gap: 20px; margin-bottom: 40px;">
+    
+    <div>
+      <h4>Priya – 8 Weeks Transformation</h4>
+      <p>"I used to feel tired all the time. With Sabna’s training and guidance, I lost 6kg and gained confidence and energy. Forever grateful!"<br>"Before joining Sabna’s program, I lacked self-discipline and felt insecure about my body. I had no idea where to start, and working out felt intimidating. But Sabna made everything easy to follow and gave me the courage to push myself. She created a balanced meal plan that suited my vegetarian lifestyle and guided me through every workout. In just 8 weeks, I lost 6 kg, toned my body, and gained so much confidence. Now, I look in the mirror and smile—not just because of how I look, but because I feel strong, capable, and proud of myself."</p>
+    </div>
+  </div>
+<img src="C:\Users\DELL\OneDrive\Documents\fitness-portfolio\beforeafter2.jpg" alt="Client Transformation 2">
+
+      </div>
+    </section>
+
+</body>
+</html>
+
+</html>
