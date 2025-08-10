@@ -25,18 +25,13 @@ Variable CaPiTaL is
 CODE:
 <?php
 echo "<table border='1' cellpadding='10'>";
-
-// First row (header)
 echo "<tr><td></td>";
 for ($col = 1; $col <= 3; $col++) {
     echo "<td>$col</td>";
 }
 echo "</tr>";
-
-// Table body
 for ($row = 1; $row <= 3; $row++) {
     echo "<tr>";
-    // First column (header)
     echo "<td>$row</td>";
     for ($col = 1; $col <= 3; $col++) {
         // Calculate division and format to 2 decimal places
