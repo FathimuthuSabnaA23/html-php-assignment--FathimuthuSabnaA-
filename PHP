@@ -34,7 +34,6 @@ for ($row = 1; $row <= 3; $row++) {
     echo "<tr>";
     echo "<td>$row</td>";
     for ($col = 1; $col <= 3; $col++) {
-        // Calculate division and format to 2 decimal places
         $result = $row / $col;
         echo "<td>" . round($result, 2) . "</td>";
     }
@@ -68,20 +67,6 @@ Display the results to the user.
 
 Code:
 <?php
-$_POST['price1'] = 10;
-$_POST['qty1'] = 2;
-$_POST['price2'] = 5;
-$_POST['qty2'] = 3;
-$_POST['price3'] = 8;
-$_POST['qty3'] = 1;
-$subtotal = ($_POST['price1'] * $_POST['qty1']) + ($_POST['price2'] * $_POST['qty2']) + ($_POST['price3'] * $_POST['qty3']);
-$tax = $subtotal * 0.10;
-$total = $subtotal + $tax;
-echo "<h3>Results:</h3>";
-echo "Subtotal: $" . number_format($subtotal, 2) . "<br>";
-echo "Tax (10%): $" . number_format($tax, 2) . "<br>";
-echo "<strong>Total Cost: $" . number_format($total, 2) . "</strong>";
-?><?php
 $_POST['price1'] = 10;
 $_POST['qty1'] = 2;
 $_POST['price2'] = 5;
