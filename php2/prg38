@@ -1,0 +1,15 @@
+38) Interpret the steps to iterate over a PHP array using a while loop with an example
+<?php
+$fruits = array("Apple", "Banana", "Mango", "Orange");
+$i = 0;
+$length = count($fruits);
+while ($i < $length) {
+echo "Fruit $i: " . $fruits[$i] . "<br>"
+$i++;
+}
+?>
+output:
+Fruit 0: Apple
+Fruit 1: Banana
+Fruit 2: Mango
+Fruit 3: Orange
