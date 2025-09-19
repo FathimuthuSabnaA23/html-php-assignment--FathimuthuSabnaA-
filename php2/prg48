@@ -1,0 +1,15 @@
+48) Record number handling in PHP with suitable examples
+<?php
+$students = array("Divya", "Priya", "Karthik", "Meena");
+$total = count($students);
+echo "Total Records: $total <br><br>";
+for ($i = 0; $i < $total; $i++) {
+echo "Record " . ($i+1) . ": " . $students[$i] . "<br>";
+}
+?>
+output:
+Total Records: 4
+Record 1: Divya
+Record 2: Priya
+Record 3: Karthik
+Record 4: Meena
