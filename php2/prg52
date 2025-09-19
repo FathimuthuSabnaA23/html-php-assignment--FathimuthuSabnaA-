@@ -1,0 +1,12 @@
+52) Compare stack and queue operations using PHP with appropriate examples.
+<? php
+$stack = array(); // Stack Example
+array_push($stack, "A", "B", "C");
+echo "Stack Pop: " . array_pop($stack) . "<br>";
+$queue = array(); // Queue Example
+array_push($queue, "X", "Y", "Z");
+echo "Queue Shift: " . array_shift($queue) . "<br>";
+?>
+output:
+Stack Pop: C
+Queue Shift: X
