@@ -1,0 +1,9 @@
+57) Outline the Regular Expression with appropriate examples.
+<? php
+$str = "My phone number is 9876543210";
+if (preg_match("/[0-9]{10}/", $str, $match)) {
+echo "Matched: " . $match[0];
+?>
+}
+Output
+Matched: 9876543210
