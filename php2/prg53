@@ -1,0 +1,12 @@
+53)Demonstrate the difference in behaviour of array_pop() and array_shift() using a numeric
+array.
+<?php
+$numbers = array(10, 20, 30, 40);
+echo "array_pop(): " . array_pop($numbers) . "<br>";
+echo "array_shift(): " . array_shift($numbers) . "<br>";
+print_r($numbers);
+output:
+array_pop(): 40
+array_shift(): 10
+Array ( [0] => 20 [1] => 30 )
+?>
