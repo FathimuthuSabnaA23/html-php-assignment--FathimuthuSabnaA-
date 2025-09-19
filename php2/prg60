@@ -1,0 +1,15 @@
+60) Create a function that takes an array of numbers as input and returns the average value.
+<?php
+function searchValue($array, $value) {
+return array_search($value, $array);
+}
+$students = array("101" => "Alice", "102" => "Bob", "103" => "Charlie");
+$result = searchValue($students, "Bob");
+if ($result !== false) {
+echo "Found at key: " . $result;
+} else {
+echo "Not found!";
+}
+?>
+Output
+Found at key: 102
