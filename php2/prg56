@@ -1,0 +1,8 @@
+56) What are all the Functions available to sort a PHP array?
+<? php
+$numbers = array(4, 2, 8, 1);
+sort($numbers);
+print_r($numbers);
+?>
+output:
+Array ( [0] => 1 [1] => 2 [2] => 4 [3] => 8 )
