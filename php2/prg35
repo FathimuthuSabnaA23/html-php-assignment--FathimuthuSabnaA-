@@ -1,0 +1,19 @@
+35)Write a PHP script using an array that checks if a string contains another string and
+displays the result.
+<?php
+$mainString = "Welcome to Marvel Motors car workshop in Coimbatore.";
+$subStrings = array("Marvel", "car", "service", "Coimbatore", "bike");
+foreach ($subStrings as $sub)
+if (strpos($mainString, $sub) !== false) {
+echo "The string contains '$sub'.<br>";
+} else {
+echo "The string does NOT contain '$sub'.<br>";
+}
+}
+?>
+output:
+The string contains 'Marvel'.
+The string contains 'car'.
+The string does NOT contain 'service'.
+The string contains 'Coimbatore'.
+The string does NOT contain 'bike'.
