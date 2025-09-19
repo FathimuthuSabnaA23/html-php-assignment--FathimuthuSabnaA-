@@ -1,0 +1,19 @@
+70) Create a PHP program to take input, a sequence of numbers from the user and store it in a
+list or array.
+<?php
+echo "Enter numbers separated by spaces: ";
+$input = trim(fgets(STDIN)); // User input
+$numbers = explode(" ", $input);
+echo "Stored Numbers in Array:\n";
+print_r($numbers);
+?>
+output:
+Enter numbers separated by spaces: 10 20 30 40
+Stored Numbers in Array:
+Array
+(
+[0] => 10
+[1] => 20
+[2] => 30
+[3] => 40
+)
