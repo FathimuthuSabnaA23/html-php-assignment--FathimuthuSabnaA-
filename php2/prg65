@@ -1,0 +1,13 @@
+65) Demonstrate PHP script that checks if a string contains another string and displays the
+result.
+<?php
+$mainString = "Welcome to Marvel Motors Coimbatore!";
+$search = "Marvel";
+if (strpos($mainString, $search) !== false) {
+echo "The string contains '$search'.";
+} else {
+echo "The string does NOT contain '$search'.";
+}
+?>
+Output
+The string contains 'Marvel'.
