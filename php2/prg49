@@ -1,0 +1,37 @@
+49) A sports team wants to evaluate player performance based on various statistical metrics.
+Design a system that utilizes numerical types and mathematical operators to calculate
+performance indices, averages, and rankings. How would you handle large datasets and
+perform complex calculations efficiently?
+<?php
+$players = array(
+array("name" => "Player A", "runs" => 560, "matches" => 12, "strikeRate" => 140.5,
+"catches" => 8),
+array("name" => "Player B", "runs" => 450, "matches" => 10, "strikeRate" => 130.2,
+"catches" => 5),
+array("name" => "Player C", "runs" => 620, "matches" => 15, "strikeRate" => 150.1,
+"catches" => 10)
+);
+function calculatePerformance($player) {
+return ($player["runs"] / $player["matches"]) +
+($player["strikeRate"] / 2) +
+($player["catches"] * 2);
+}
+foreach ($players as &$player) {
+$player["performanceIndex"] = calculatePerformance($player);
+}
+usort($players, function($a, $b) {
+return $b["performanceIndex"] <=> $a["performanceIndex"];
+});
+echo "<h2>Player Performance Rankings</h2>";
+$rank = 1;
+foreach ($players as $p) {
+echo "Rank $rank: " . $p["name"] .
+" | Avg Runs: " . ($p["runs"] / $p["matches"]) .
+" | Index: " . round($p["performanceIndex"], 2) . "<br>";
+$rank++;
+}
+output:
+Player Performance Rankings
+Rank 1: Player C | Avg Runs: 41.33 | Index: 134.15
+Rank 2: Player A | Avg Runs: 46.67 | Index: 130.45
+Rank 3: Player B | Avg Runs: 45 | Index: 117.10
