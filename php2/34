@@ -1,0 +1,9 @@
+34)Replace all occurrences of a specific word with another word in a string using regular
+expressions in PHP.
+<?php
+$text = "PHP is great. I love PHP because PHP is powerful.";
+$result = preg_replace("/PHP/", "JavaScript", $text);
+echo $result;
+?>
+Output:
+JavaScript is great. I love JavaScript because JavaScript is powerful.
