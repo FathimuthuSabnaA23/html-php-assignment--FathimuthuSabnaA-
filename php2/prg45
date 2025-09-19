@@ -1,0 +1,30 @@
+45) Write a PHP function to compare two multidimensional arrays and return the difference.
+<?php
+function array_diff_assoc_recursive($array1, $array2) {
+$diff = [];
+foreach ($array1 as $key => $value) {
+if (is_array($value)) {
+if (!isset($array2[$key]) || !is_array($array2[$key])) {
+$diff[$key] = $value;
+} else {
+$newDiff = array_diff_assoc_recursive($value, $array2[$key]);
+if (!empty($newDiff)) $diff[$key] = $newDiff;
+}
+} elseif (!isset($array2[$key]) || $array2[$key] !== $value) {
+$diff[$key] = $value;
+}
+}
+return $diff;
+}
+$a1 = ["id"=>1, "info"=>["name"=>"Divya", "age"=>20]];
+$a2 = ["id"=>1, "info"=>["name"=>"Divya", "age"=>22]];
+print_r(array_diff_assoc_recursive($a1, $a2));
+?>
+output:
+Array
+(
+[info] => Array
+(
+[age] => 20
+)
+)
