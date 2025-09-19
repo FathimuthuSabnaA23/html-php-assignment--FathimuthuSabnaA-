@@ -1,0 +1,7 @@
+36)Create an array of fruits in PHP and display the third element.
+<?php
+$fruits = array("Apple", "Banana", "Mango", "Orange", "Grapes");
+echo "The third fruit is: " . $fruits[2];
+?>
+output:
+The third fruit is: Mango
