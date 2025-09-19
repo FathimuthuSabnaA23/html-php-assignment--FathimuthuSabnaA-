@@ -1,0 +1,21 @@
+67) Construct a program that tokenizes a sentence into words using regular expressions.
+Then, count the number of occurrences of each word and display the results.
+<?php
+$sentence = "PHP is great and PHP is easy to learn";
+$words = preg_split('/\W+/', strtolower($sentence), -1, PREG_SPLIT_NO_EMPTY);
+$wordCount = array_count_values($words);
+echo "Sentence: $sentence\n";
+print_r($wordCount);
+?>
+output:
+Sentence: PHP is great and PHP is easy to learn
+Array
+(
+[php] => 2
+[is] => 2
+[great] => 1
+[and] => 1
+[easy] => 1
+[to] => 1
+[learn] => 1
+)
